@@ -1,5 +1,10 @@
 #include "Painter.h"
 
+/**
+ * Creates a separator node for the mesh shape.
+ * @param mesh Pointer to the mesh object.
+ * @return A separator node containing the mesh shape.
+ */
 SoSeparator* Painter::getShapeSep(Mesh* mesh) {
 	SoSeparator* res = new SoSeparator();
 
@@ -29,6 +34,11 @@ SoSeparator* Painter::getShapeSep(Mesh* mesh) {
 	return res;
 }
 
+/**
+ * Creates a separator node for the sampled points.
+ * @param sampledPoints Vector of sampled vertices.
+ * @return A separator node containing the sampled points.
+ */
 SoSeparator* Painter::getSampledPointsSep(const std::vector<Vertex*>& sampledPoints) {
 	SoSeparator* res = new SoSeparator();
 	SoMaterial* mat = new SoMaterial();
@@ -44,6 +54,12 @@ SoSeparator* Painter::getSampledPointsSep(const std::vector<Vertex*>& sampledPoi
 	return res;
 }
 
+/**
+ * Creates a separator node for the maximal balls.
+ * @param centers Vector of vertices representing the centers of the maximal balls.
+ * @param radii Vector of radii of the maximal balls.
+ * @return A separator node containing the maximal balls.
+ */
 SoSeparator* Painter::getMaximalBallsSep(const std::vector<Vertex*>& centers, const std::vector<float>& radii) {
 	SoSeparator* res = new SoSeparator();
 	for (size_t i = 0; i < centers.size(); ++i) {
@@ -62,6 +78,11 @@ SoSeparator* Painter::getMaximalBallsSep(const std::vector<Vertex*>& centers, co
 	return res;
 }
 
+/**
+ * Creates a separator node for the medial axis lines.
+ * @param centers Vector of vertices representing the centers of the maximal balls.
+ * @return A separator node containing the medial axis lines.
+ */
 SoSeparator* Painter::getMedialAxisLinesSep(const std::vector<Vertex*>& centers) {
 	SoSeparator* res = new SoSeparator();
 	SoMaterial* mat = new SoMaterial();

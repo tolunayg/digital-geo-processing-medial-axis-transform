@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="0.off" />
+    <None Include="1.off" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
